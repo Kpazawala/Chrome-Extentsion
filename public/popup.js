@@ -1,5 +1,8 @@
 console.log("hello");
 
+let gui;
+let bgpage = chrome.extension.getBackgroundPage();
+let image_source = bgpage.image_source;
 
 class GalleryImage {
   constructor(x,y,picture,imageWidth,imageHeight){
@@ -16,10 +19,11 @@ class GalleryImage {
 
 function setup() {
   console.log("hello");
+  console.log(image_source);
 
-  let bgpage = chrome.extension.getBackgroundPage();
-  let image_source = bgpage.image_source;
 
+  gui = createGui();
+  b = createButton("1", 50, 50)
   let global galleryArray = [];
 }
 
@@ -29,6 +33,9 @@ function draw(){
   console.log(image_source);
   print("hello")
   }
+  drawGui();
+
+  if
 }
 
 function GalleryDisplay() {
