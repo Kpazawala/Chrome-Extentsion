@@ -20,6 +20,7 @@ function setup() {
   let bgpage = chrome.extension.getBackgroundPage();
   let image_source = bgpage.image_source;
 
+  let global galleryArray = [];
 }
 
 function draw(){
@@ -27,5 +28,11 @@ function draw(){
 
   console.log(image_source);
   print("hello")
+  }
+}
+
+function GalleryDisplay() {
+  for(let image in galleryArray){
+    image.displayImage();
   }
 }
