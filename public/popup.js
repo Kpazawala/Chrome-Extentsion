@@ -1,5 +1,5 @@
-console.log("hello");
 
+<<<<<<< HEAD
 let gui;
 let bgpage = chrome.extension.getBackgroundPage();
 let image_source = bgpage.image_source;
@@ -42,4 +42,16 @@ function GalleryDisplay() {
   for(let image in galleryArray){
     image.displayImage();
   }
+=======
+
+let bgpage = chrome.extension.getBackgroundPage();
+let image_source = bgpage.image_source;
+
+function setup() {
+  console.log("hello");
+  console.log(image_source);
+}
+
+function draw(){
+>>>>>>> 534d25eb3fd7e0cfc4416d1b1974f261bb166215
 }
