@@ -12,6 +12,6 @@ function draw(){
   for (var i = 0; i < image_source.length; i++) {
 
   console.log(image_source);
-
+  print("hello")
   }
 }
