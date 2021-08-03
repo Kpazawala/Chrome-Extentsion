@@ -6,6 +6,6 @@ window.image_source = 'hello';
 
 function receiver(request, sender, sendResponse) {
   console.log(request);
-  image_source = request.text;
-  //image_source = request[i].text;
+  // image_source = request.sources;
+  image_source = request.sources;
 }
