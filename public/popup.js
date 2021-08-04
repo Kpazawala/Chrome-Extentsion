@@ -4,6 +4,20 @@ let image_source = bgpage.image_source;
 
 let galleryArray;
 
+class GalleryImage {
+  constructor(image){
+    this.image = image;
+    this.x = 0; //random(width);
+    this.y = 0; //random(height);
+    this.imageWidth = 50;
+    this.imageHeight = 50;
+  }
+
+  displayImage() {
+    image(this.image, this.x, this.y, this.imageWidth, this.imageHeight);
+  }
+}
+
 function setup() {
   console.log("hello");
   console.log(image_source);
@@ -20,6 +34,7 @@ function setup() {
     galleryArray.push(img_index);
 
   }
+  sorting();
   //document.getElementById('output').innerHTML = galleryArray[5];
 
 
@@ -32,42 +47,33 @@ function draw(){
     galleryArray[i].displayImage();
   }
   let div1 = createDiv();
-  div.id(1);
+  div1.id(1);
 
-  // var rows = round(galleryArray.length/2);
-  // var columns = 2;
-  //
-  // for (let columnPlace = 0; columnPlace < columns; columnPlace++){
-  //   if (rows%2 == 0){
-  //     console.log('works');
-  //   	for (let picturePlace = (rows * columnPlace); picturePlace < rows * (columnPlace + 1); picturePlace++){
-  //       galleryArray[i].x = columnPlace * 50; //galleryArray[picturePlace].imageWidth;
-  //       galleryArray[i].y = columnPlace * 50; //galleryArray[picturePlace].imageHeight;
-  //       console.log("bye" + picturePlace);
-  //       console.log(galleryArray[picturePlace].x);
-  //     }
-  //   }
-  //   if (rows%2 == 1){
-  //     console.log('works');
-  //   	for (let picturePlace = (rows * columnPlace); picturePlace < rows * (columnPlace + 1) - 1  ; picturePlace++){
-  //       console.log("yo" + picturePlace);
-  //       galleryArray[picturePlace].x = columnPlace * 50; //galleryArray[picturePlace].imageWidth;
-  //       galleryArray[picturePlace].y = columnPlace * 50; //galleryArray[picturePlace].imageHeight;
-  //     }
-  //   }
-  }
+
 }
 
-class GalleryImage {
-  constructor(image){
-    this.image = image;
-    this.x = 0; //random(width);
-    this.y = 0; //random(height);
-    this.imageWidth = 50;
-    this.imageHeight = 50;
-  }
+function sorting(){
+  var rows = round(galleryArray.length/2);
+  var columns = 2;
 
-  displayImage() {
-    image(this.image, this.x, this.y, this.imageWidth, this.imageHeight);
+  for (let columnPlace = 0; columnPlace < columns; columnPlace++){
+    if (galleryArray.length%2 == 0){
+      console.log('works');
+      for (let picturePlace = (rows * columnPlace); picturePlace < rows * (columnPlace + 1); picturePlace++){
+        galleryArray[picturePlace].x = columnPlace * 50; //galleryArray[picturePlace].imageWidth;
+        galleryArray[picturePlace].y = columnPlace * 50; //galleryArray[picturePlace].imageHeight;
+        console.log("bye" + picturePlace);
+        console.log(galleryArray[picturePlace].x);
+      }
+    }
+    if (galleryArray.length%2 == 1){
+      console.log('works');
+      for (let picturePlace = (rows * columnPlace); picturePlace < (rows * (columnPlace + 1)) - 1  ; picturePlace++){
+        console.log("yo" + picturePlace);
+        galleryArray[picturePlace].x = columnPlace * 50; //galleryArray[picturePlace].imageWidth;
+        galleryArray[picturePlace].y = columnPlace * 50; //galleryArray[picturePlace].imageHeight;
+        text(`$(picturePlace)`, picturePlace * 3, picturePlace * 4)
+      }
+    }
   }
 }
