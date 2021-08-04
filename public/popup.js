@@ -18,7 +18,7 @@ function setup() {
     galleryArray[i].displayImage();
   }
 
-  b = createButton("1", 50, 50)
+  //b = createButton("1", 50, 50)
 
 }
 
